@@ -8,6 +8,10 @@
         <module>sca-provider-payment-18081</module>
         <module>sca-consumer-order-18090</module>
         <module>sca-config-nacos</module>
+        <module>sca-seata-order-19020</module>
+        <module>sca-seata-seataStorage-19030</module>
+        <module>sca-seata-account-19010</module>
+        <module>sca-common</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -88,19 +92,19 @@
         </dependencies>
     </dependencyManagement>
 
-    <build>
-        <finalName>${project.name}</finalName>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-                <configuration>
-                    <fork>true</fork>
-                    <addResources>true</addResources>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
+<!--    <build>-->
+<!--        <finalName>${project.name}</finalName>-->
+<!--        <plugins>-->
+<!--            <plugin>-->
+<!--                <groupId>org.springframework.boot</groupId>-->
+<!--                <artifactId>spring-boot-maven-plugin</artifactId>-->
+<!--                <configuration>-->
+<!--                    <fork>true</fork>-->
+<!--                    <addResources>true</addResources>-->
+<!--                </configuration>-->
+<!--            </plugin>-->
+<!--        </plugins>-->
+<!--    </build>-->
     <!--第三方maven私服-->
     <repositories>
         <repository>

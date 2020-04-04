@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="me.alphar.sca.order.dao.SeataOrderDao">
+    <insert id="save" parameterType="me.alphar.sca.common.entity.SeataOrder"
+            useGeneratedKeys="true" keyProperty="tid">
+        insert into t_order(user_id, product_id, `count`, money, status) values
+        (#{userId}, #{productId}, #{count}, #{money}, #{status})
+    </insert>
+
+    <resultMap id="BaseResultMap" type="me.alphar.sca.common.entity.SeataOrder">
+        <id column="tid" property="id" jdbcType="BIGINT"/>
+        <id column="user_id" property="userId" jdbcType="BIGINT"/>
+        <id column="product_id" property="productId" jdbcType="BIGINT"/>
+        <id column="count" property="count" jdbcType="INTEGER"/>
+        <id column="money" property="money" jdbcType="NUMERIC"/>
+        <id column="status" property="status" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <select id="getById" parameterType="long" resultMap="BaseResultMap">
+        select id, user_id, product_id, `count`, money, status from t_order where id=#{id}
+    </select>
+
+</mapper>
