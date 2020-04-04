@@ -7,4 +7,5 @@ public interface ISeataAccountService {
     int update(SeataAccount seataOrder);
     SeataAccount getById(Long id);
 
+    SeataAccount getByUserId(Long userId);
 }

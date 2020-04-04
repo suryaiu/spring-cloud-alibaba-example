@@ -23,4 +23,9 @@ public class SeataStorageServiceImpl implements ISeataStorageService {
     public SeataStorage getById(Long id) {
         return seataStorageDao.getById(id);
     }
+
+    @Override
+    public SeataStorage getByProductId(Long productId) {
+        return seataStorageDao.getByProductId(productId);
+    }
 }

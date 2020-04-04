@@ -4,9 +4,7 @@ import me.alphar.sca.common.entity.SeataStorage;
 import me.alphar.sca.common.util.CommonResult;
 import me.alphar.sca.storage.service.ISeataStorageService;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 
@@ -30,6 +28,12 @@ public class SeataStorageController {
         seataStorageService.update(seataStorage);
         SeataStorage storage = seataStorageService.getById(seataStorage.getId());
         return new CommonResult<>(200, "操作成功，服务器端口：" + serverPort, storage);
+    }
+
+    @GetMapping("{productId}")
+    public CommonResult<SeataStorage> getByProductId(@PathVariable("productId") Long productId) {
+        SeataStorage storage = seataStorageService.getByProductId(productId);
+        return new CommonResult<>(200, "查询成功，服务器端口：" + serverPort, storage);
     }
 
 }

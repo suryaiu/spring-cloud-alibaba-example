@@ -14,5 +14,8 @@ import org.apache.ibatis.annotations.Param;
 @Mapper
 public interface SeataAccountDao {
     int update(SeataAccount seataAccount);
+
     SeataAccount getById(@Param("id") Long id);
+
+    SeataAccount getByUserId(@Param("userId") Long userId);
 }

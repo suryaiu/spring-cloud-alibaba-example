@@ -23,4 +23,9 @@ public class SeataAccountServiceImpl implements ISeataAccountService {
     public SeataAccount getById(Long id) {
         return seataAccountDao.getById(id);
     }
+
+    @Override
+    public SeataAccount getByUserId(Long userId) {
+        return seataAccountDao.getByUserId(userId);
+    }
 }

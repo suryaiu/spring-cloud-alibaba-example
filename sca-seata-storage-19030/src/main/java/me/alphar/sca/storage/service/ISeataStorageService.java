@@ -5,6 +5,8 @@ import me.alphar.sca.common.entity.SeataStorage;
 public interface ISeataStorageService {
 
     int update(SeataStorage seataStorage);
+
     SeataStorage getById(Long id);
 
+    SeataStorage getByProductId(Long productId);
 }

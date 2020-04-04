@@ -14,5 +14,8 @@ import org.apache.ibatis.annotations.Param;
 @Mapper
 public interface SeataStorageDao {
     int update(SeataStorage seataStorage);
+
     SeataStorage getById(@Param("id") Long id);
+
+    SeataStorage getByProductId(Long productId);
 }

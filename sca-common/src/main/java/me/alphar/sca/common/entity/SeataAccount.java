@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 
 @Data
 @AllArgsConstructor
@@ -13,7 +14,7 @@ import java.io.Serializable;
 public class SeataAccount implements Serializable {
     private Long id;
     private Long userId;
-    private Integer total;
-    private Integer used;
-    private Integer residue;
+    private BigDecimal total;
+    private BigDecimal used;
+    private BigDecimal residue;
 }
