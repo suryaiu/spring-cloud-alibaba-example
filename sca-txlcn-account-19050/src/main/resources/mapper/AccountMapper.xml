@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="me.alphar.txlcn.account19050.dao.AccountDao">
+    <insert id="update" parameterType="me.alphar.sca.common.entity.SeataAccount"
+            useGeneratedKeys="true" keyProperty="id">
+        update t_account set user_id=#{userId}, total=#{total}, used=#{used}, residue=#{residue} where id=#{id}
+    </insert>
+
+    <resultMap id="BaseResultMap" type="me.alphar.sca.common.entity.SeataAccount">
+        <id column="id" property="id" jdbcType="BIGINT"/>
+        <id column="user_id" property="userId" jdbcType="BIGINT"/>
+        <id column="total" property="total" jdbcType="NUMERIC"/>
+        <id column="used" property="used" jdbcType="NUMERIC"/>
+        <id column="residue" property="residue" jdbcType="NUMERIC"/>
+    </resultMap>
+
+    <select id="getById" parameterType="long" resultMap="BaseResultMap">
+        select id, user_id, total, used, residue from t_account where id=#{id}
+    </select>
+
+    <select id="getByUserId" parameterType="long" resultMap="BaseResultMap">
+        select id, user_id, total, used, residue from t_account where user_id=#{userId}
+    </select>
+</mapper>
