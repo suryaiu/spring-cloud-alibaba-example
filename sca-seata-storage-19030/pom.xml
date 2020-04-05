@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>sca-seata-seataStorage-19001</artifactId>
+    <artifactId>sca-seata-seataStorage-19030</artifactId>
 
 
     <dependencies>

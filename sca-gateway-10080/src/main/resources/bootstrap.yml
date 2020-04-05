@@ -1,0 +1,35 @@
+server:
+  port: 10080
+spring:
+  application:
+    name: gateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true # 开启从注册中心动态创建路由的功能，利用微服务名称进行路由
+      routes:
+        - id: seata-account-id
+          uri: lb://seata-account
+          predicates:
+            - Path=/account/**
+
+        - id: seata-storage-id
+          uri: lb://seata-storage
+          predicates:
+            - Path=/storage/**
+
+        - id: seata-order-id
+          uri: lb://seata-order
+          predicates:
+            - Path=/order/**
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+
+# 打开监控端点
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

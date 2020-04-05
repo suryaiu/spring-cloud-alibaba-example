@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>sca-seata-order-19020</artifactId>
+    <artifactId>sca-seata-storage-19031</artifactId>
 
     <dependencies>
         <dependency>
@@ -72,5 +72,6 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-undertow</artifactId>
         </dependency>
+
     </dependencies>
 </project>
