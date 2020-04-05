@@ -2,40 +2,21 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <packaging>pom</packaging>
-    <modules>
-        <module>sca-provider-payment-18080</module>
-        <module>sca-provider-payment-18081</module>
-        <module>sca-consumer-order-18090</module>
-        <module>sca-config-nacos-18099</module>
-        <module>sca-common</module>
-        <module>sca-gateway-10080</module>
 
-        <module>sca-seata-order-19020</module>
-        <module>sca-seata-order-19021</module>
-        <module>sca-seata-storage-19030</module>
-        <module>sca-seata-storage-19031</module>
-        <module>sca-seata-account-19010</module>
-        <module>sca-seata-account-19012</module>
-        <module>sca-txlcn-order-19040</module>
-        <module>sca-txlcn-order-19041</module>
-        <module>sca-txlcn-account-19050</module>
-        <module>sca-txlcn-account-19051</module>
-        <module>sca-txlcn-storage-19060</module>
-        <module>sca-txlcn-storage-19061</module>
-        <module>sca-txlcn-tm-9090</module>
-    </modules>
+    <groupId>me.alphar.sca</groupId>
+    <artifactId>spring-cloud-alibaba-example</artifactId>
+    <packaging>pom</packaging>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>${project.artifactId}</name>
+
+    <description>Demo project for Spring Boot</description>
+
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>2.2.6.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>me.alphar.sca</groupId>
-    <artifactId>spring-cloud-alibaba-example</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-    <name>spring-cloud-alibaba-example</name>
-    <description>Demo project for Spring Boot</description>
 
     <!--统一管理jar包版本-->
     <properties>
@@ -177,4 +158,13 @@
         </repository>
     </repositories>
 
+    <modules>
+        <module>sca-config-nacos-18099</module>
+        <module>sca-common</module>
+        <module>sca-gateway-10080</module>
+        <module>sca-txlcn-order-19040</module>
+        <module>sca-txlcn-account-19050</module>
+        <module>sca-txlcn-storage-19060</module>
+        <module>sca-txlcn-tm-9090</module>
+    </modules>
 </project>
