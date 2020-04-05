@@ -15,7 +15,7 @@ spring:
         server-addr: localhost:8848
     alibaba:
       seata:
-        tx-service-group: sca_tx_grop
+        tx-service-group: sca_tx_group
 
 
 mybatis:
