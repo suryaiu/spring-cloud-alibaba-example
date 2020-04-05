@@ -1,5 +1,6 @@
 package me.alphar.sca.order.service.impl;
 
+import io.seata.spring.annotation.GlobalTransactional;
 import me.alphar.sca.common.entity.SeataAccount;
 import me.alphar.sca.common.entity.SeataOrder;
 import me.alphar.sca.common.entity.SeataStorage;
@@ -26,6 +27,7 @@ public class SeataOrderServiceImpl implements ISeataOrderService {
     private SeataStorageService seataStorageService;
 
     @Override
+    @GlobalTransactional(name = "sca-order-tx", rollbackFor = Exception.class)
     public int save(SeataOrder seataOrder) {
         // 第一步：扣除用户账户
         Long userId = seataOrder.getUserId();
@@ -54,6 +56,7 @@ public class SeataOrderServiceImpl implements ISeataOrderService {
         storage.setUsed(used1 + seataOrder.getCount());
         storage.setResidue(residue1 - seataOrder.getCount());
         seataStorageService.update(storage);
+
         // 最后生成订单
         return seataOrderDao.save(seataOrder);
     }
